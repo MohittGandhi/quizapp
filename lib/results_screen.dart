@@ -6,7 +6,12 @@ import 'package:quizapp/question_screen.dart';
 import 'package:quizapp/questions.dart';
 
 class ResultScreen extends StatelessWidget {
-  const ResultScreen({super.key, required this.chosenAns});
+  const ResultScreen({
+    super.key,
+    required this.chosenAns,
+    required this.onRestart,
+  });
+  final void Function() onRestart;
   final List<String> chosenAns;
   List<Map<String, Object>> getsummarydata() {
     final List<Map<String, Object>> summary = [];
@@ -43,9 +48,41 @@ class ResultScreen extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
-          TextButton(onPressed: () {}, child: const Text('restart'))
+          TextButton(
+              onPressed: onRestart,
+              child: const IconWithText(
+                icon: Icons.restart_alt,
+                data: 'Restart Quiz',
+              ))
         ]),
       ),
+    );
+  }
+}
+
+class IconWithText extends StatelessWidget {
+  const IconWithText({super.key, required this.icon, required this.data});
+  final IconData icon;
+  final String data;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(
+          icon,
+          color: Colors.white,
+        ),
+        const SizedBox(
+          width: 5,
+        ),
+        Text(
+          data,
+          style: const TextStyle(color: Colors.white),
+        )
+      ],
     );
   }
 }
