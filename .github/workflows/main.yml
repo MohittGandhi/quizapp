@@ -8,7 +8,7 @@ on:
       - main
       - master
       - develop
-name: "Build & Release"
+name: "Build & Release tcufiugogbio"
 jobs:
   build:
     name: Build & Release
@@ -35,5 +35,3 @@ jobs:
 
 
 
-# push to master, main, develop
-# pull request on main master
