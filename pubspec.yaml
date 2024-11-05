@@ -46,7 +46,32 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
-
+  flutter_launcher_icons: "^0.14.1"
+flutter_launcher_icons:
+    android: true
+    ios: true
+    image_path: "assets/images/LauncherIcon.png"
+    adaptive_icon_background: "#ffffff"
+    adaptive_icon_foreground: "assets/images/LauncherIcon.png"
+    adaptive_icon_monochrome: "assets/images/LauncherIcon.png"
+    adaptive_icon_foreground_inset: 24
+    remove_alpha_ios: true
+    image_path_ios_dark_transparent: "assets/images/LauncherIcon.png"
+    image_path_ios_tinted_grayscale: "assets/images/LauncherIcon.png"
+    desaturate_tinted_to_grayscale_ios: true
+    background_color_ios: "#ffffff"
+    web:
+      generate: true
+      image_path: "assets/images/LauncherIcon.png"
+      background_color: "#ffffff"
+      theme_color: "#ffffff"
+    windows:
+      generate: true
+      image_path: "assets/images/LauncherIcon.png"
+      icon_size: 48 # min:48, max:256, default: 48
+    macos:
+      generate: true
+      image_path: "assets/images/LauncherIcon.png"
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
